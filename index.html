@@ -14,7 +14,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
-	<title>Relaxation iBeacons</title>
+	<title>Relaxation</title>
 
 	<style>
 	@import 'page.css';
@@ -30,7 +30,8 @@
 <body>
 <!-- The navigator object holds pages -->
 
-<ons-navigator class="appNavigator" page="pageMain.html"></ons-navigator>
+<ons-navigator class="appNavigator" swipeable id="myNavigator"page="pageMain.html"></ons-navigator>
+
 
 <!-- This is the first page, naming convention is to use ."html" for page templates (they can also be placed in separate files, so this makes kind of sense). -->
 
@@ -51,7 +52,6 @@
       </ons-list-item>
     </ons-list>
 		<ons-button id="push-button">About</ons-button>
-
   </ons-page>
 </ons-template>
 
@@ -125,19 +125,17 @@
   </ons-page>
 </ons-template>
 
-<ons-navigator swipeable id="myNavigator" page="pageMain.html"></ons-navigator>
-
-
 
 <template id="about.html">
   <ons-page id="about">
     <ons-toolbar>
-      <div class="left"><ons-back-button>About</ons-back-button></div>
-      <div class="center"></div>
+      <div class="left"><ons-back-button>Menu</ons-back-button></div>
+      <div class="center">About</div>
     </ons-toolbar>
-
-    <p>This app is made for relaxation and our group name is KBK.</p>
-  </ons-page>
+		<div class="page-content">
+    	<p>This app is made for relaxation and our group name is KBK.</p>
+		</div>
+	</ons-page>
 </template>
 
 <script>
@@ -147,5 +145,6 @@ function showPage(page) {
   $('.appNavigator')[0].pushPage(page)
 }
 </script>
+<script src="controller.js"></script>
 </body>
 </html>
