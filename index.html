@@ -7,6 +7,10 @@
 	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
 	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
 	<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+     <script>
+        //ons.platform.select('android')
+        ons.platform.select('ios')
+    </script>
 	<title>Relaxation iBeacons</title>
 
 	<style>
@@ -17,106 +21,78 @@
 	// Redirect console if running from Evothings Workbench.
 	if (window.hyper) { console.log = hyper.log }
 	</script>
+    
 </head>
 
 <body>
+<!-- The navigator object holds pages -->
 
-	<ons-page>
+<ons-navigator class="appNavigator" page="pageMain.html"></ons-navigator>
 
+<!-- This is the first page, naming convention is to use ."html" for page templates (they can also be placed in separate files, so this makes kind of sense). -->
+
+<ons-template id="pageMain.html">
+  <ons-page id="pageMain">
     <ons-toolbar>
-      <div class=”center”>Toolbar</div>
+      <div class="center">JS Mobile Frameworks</div>
     </ons-toolbar>
-    Some content here
-  <ons-input></ons-input>
-  <ons-fab></ons-fab>
-  <div>More content</div>
-    <div class="content">
-    Scrollable content hereee
-    </div>
-        
-
- 	<ons-list-title>Practices</ons-list-title>
-	<ons-list>
-		  <ons-list-header>Click on one...</ons-list-header>
-		  <ons-list-item onclick="alert('Hello World!')">Feel Your Feet</ons-list-item>
-		  <ons-list-item>Feel Your Shoulders</ons-list-item>
-		  <ons-list-item>Feel Your Face</ons-list-item>
-	   
-	</ons-list>
-        Heeej 
-    <ons-button onclick="alert('Hello World!')">Click Me</ons-button>
-    <!-- Your page content here. -->
-
+    <ons-list>
+      <ons-list-item onclick="showPage('pageIntroduction.html')" modifier="chevron" tappable>
+        Introduction
+      </ons-list-item>
+      <ons-list-item onclick="showPage('pageOverview.html')" modifier="chevron" tappable>
+        JS Frameworks Overview
+      </ons-list-item>
+      <ons-list-item onclick="showPage('pageJSHints.html')" modifier="chevron" tappable>
+        JavaScript Hints and Tricks
+      </ons-list-item>
+    </ons-list>
   </ons-page>
+</ons-template>
 
-	<div class="my-page" id="page-feet">
-		<div class="my-header">
-			<img class="my-header-image" src="photos/photo-feet.jpg" />
-			<img class="my-icon-back" src="icon-back.png" ontouchend="history.back()" />
-		</div>
-		<div class="my-content">
-			<h1>Feel Your Feet</h1>
-			<ul>
-				<li>Stand on your feet.</li>
-				<li>Experience the contact with the ground.</li>
-				<li>Feel into the soles of the feet.</li>
-				<li>Feel the knees.</li>
-				<li>The hips.</li>
-				<li>The spine.</li>
-				<li>Shoulders.</li>
-				<li>Neck.</li>
-				<li>Head.</li>
-				<li>Feel the connection between the top of the head and the feet.</li>
-			</ul>
-		</div>
-	</div>
+<ons-template id="pageIntroduction.html">
+  <ons-page id="pageIntroduction">
+    <ons-toolbar>
+      <div class="left"><ons-back-button>Menu</ons-back-button></div>
+      <div class="center">Introduction</div>
+    </ons-toolbar>
+    <div class="page-content">
+      <h1>JavaScript Frameworks for Mobile Development</h1>
+      <p>Welcome to this lecture</p>
+    </div>
+  </ons-page>
+</ons-template>
 
-	<div class="my-page" id="page-shoulders">
-		<div class="my-header">
-			<img class="my-header-image" src="photos/photo-shoulders-1.jpg" />
-			<img class="my-icon-back" src="icon-back.png" ontouchend="history.back()" />
-		</div>
-		<div class="my-content">
-			<h1>Feel Your Shoulders</h1>
-			<ul>
-				<li>Let your arms hang loose.</li>
-				<li>Become aware of the shoulders.</li>
-				<li>Slightly lift one shoulder and release it.</li>
-				<li>Let the shoulder come all the way down.</li>
-				<li>Lift the other shoulder and release it.</li>
-				<li>Alternate three more times on each side.</li>
-				<li>Experience the breath flowing in and out of the body.</li>
-			</ul>
-		</div>
-	</div>
+<ons-template id="pageOverview.html">
+  <ons-page id="pageOverview">
+    <ons-toolbar>
+      <div class="left"><ons-back-button>Menu</ons-back-button></div>
+      <div class="center">Overview</div>
+    </ons-toolbar>
+    <div class="page-content">
+     <p>Overview of JS frameworks</p>
+    </div>
+  </ons-page>
+</ons-template>
 
-	<div class="my-page" id="page-face">
-		<div class="my-header">
-			<img class="my-header-image" src="photos/photo-default-unused.jpg" />
-			<img class="my-icon-back" src="icon-back.png" ontouchend="history.back()" />
-		</div>
-		<div class="my-content">
-			<h1>Feel Your Face</h1>
-			<ul>
-				<li>Become aware of your face.</li>
-				<li>Feel the forehead.</li>
-				<li>The eyebrows.</li>
-				<li>Eyes.</li>
-				<li>Nose.</li>
-				<li>Nostrils.</li>
-				<li>Air flowing through the nostrils.</li>
-				<li>Cheeks.</li>
-				<li>Jaw.</li>
-				<li>Lips.</li>
-				<li>Tongue.</li>
-				<li>Whole of the head.</li>
-				<li>The space surrounding the head.</li>
-			</ul>
-		</div>
-	</div>
+<ons-template id="pageJSHints.html">
+  <ons-page id="pageJSHints">
+    <ons-toolbar>
+      <div class="left"><ons-back-button>Menu</ons-back-button></div>
+      <div class="center">JavaScript Hints and Tricks</div>
+    </ons-toolbar>
+    <div class="page-content">
+      <p>JavaScript has some glitches that are good to know about</p>
+    </div>
+  </ons-page>
+</ons-template>
 
-	<script src="lib/jquery.js"></script>
-	<script src="cordova.js"></script>
-	<script src="app.js"></script>
+<script>
+function showPage(page) {
+  // jQuery returns an array of DOM objects, we want the first DOM object
+  // which is the have that has the pushPage function.
+  $('.appNavigator')[0].pushPage(page)
+}
+</script>
 </body>
 </html>
