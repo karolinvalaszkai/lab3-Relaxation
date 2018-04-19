@@ -13,7 +13,7 @@
     </script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-	
+
 	<title>Relaxation iBeacons</title>
 
 	<style>
@@ -50,8 +50,11 @@
         JavaScript Hints and Tricks
       </ons-list-item>
     </ons-list>
+		<ons-button id="push-button">About</ons-button>
+
   </ons-page>
 </ons-template>
+
 
 <ons-template id="pageIntroduction.html">
   <ons-page id="pageIntroduction">
@@ -89,6 +92,21 @@
     </div>
   </ons-page>
 </ons-template>
+
+<ons-navigator swipeable id="myNavigator" page="page1.html"></ons-navigator>
+
+
+
+<template id="about.html">
+  <ons-page id="about">
+    <ons-toolbar>
+      <div class="left"><ons-back-button>About</ons-back-button></div>
+      <div class="center"></div>
+    </ons-toolbar>
+
+    <p>This app is made for relaxation and our group name is KBK.</p>
+  </ons-page>
+</template>
 
 <script>
 function showPage(page) {
