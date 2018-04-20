@@ -87,15 +87,14 @@
 -->
 
 
-<<<<<<< HEAD
-=======
+
  <template id="dialog.html">
   <ons-dialog id="my-dialog">
     <div style="text-align: center; padding: 10px;">
       <p>
         Stop playing around! Get started with your relaxation already. 
       </p>
->>>>>>> 7e5c2326c71c28592cb77c3758d6c2ec159dd968
+
 
       <p>
         <ons-button class="about" onclick="hideDialog('my-dialog')">Close</ons-button>
@@ -131,8 +130,7 @@
   <ons-page id="feelFeet">
     <ons-toolbar>
       <div class="center">Feel you feet</div>
-        <div class="right">
-            <ons-button class="about" onclick="showTemplateDialog() ">~Distraction~</ons-button></div>
+    <div class="left"><ons-back-button>Menu</ons-back-button></div>
     </ons-toolbar>
     <div class="page-content">
 			<ons-switch>
@@ -158,8 +156,8 @@
 <ons-template id="feelShoulders.html">
   <ons-page id="feelShoulders">
     <ons-toolbar>
-
       <div class="center">Feel your shoulders</div>
+    <div class="left"><ons-back-button>Menu</ons-back-button></div>
     </ons-toolbar>
     <div class="page-content">
             <ons-switch>
@@ -183,6 +181,7 @@
     <ons-toolbar>
 
       <div class="center">Feel your face</div>
+    <div class="left"><ons-back-button>Menu</ons-back-button></div>
     </ons-toolbar>
     <div class="page-content">
 			<ons-switch>
@@ -253,6 +252,9 @@
       <div class="center">
         Home
       </div>
+        <div class="right">
+            <ons-button class="about" onclick="showTemplateDialog() ">~Distraction~</ons-button>
+        </div>
     </ons-toolbar>
         <ons-list>
       <ons-list-item onclick="showPage('feelFeet.html')" modifier="chevron" tappable>
@@ -268,7 +270,7 @@
       </ons-list-item>
     </ons-list>
     <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-      Swipe right to open the menu!
+      Open the menu!
     </p>
   </ons-page>
 </template>
