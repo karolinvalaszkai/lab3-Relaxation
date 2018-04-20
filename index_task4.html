@@ -45,6 +45,7 @@
         
         .about{
             background-color: antiquewhite;
+            color: black;
 
         }
 	</style>
@@ -65,7 +66,7 @@
 
     
 <ons-tabbar>
-        <ons-tab class="center" page="about.html" label="" active>About
+        <ons-tab class="about" page="about.html" label="" active>About
         </ons-tab>
     
         <ons-tab label="" page="feelFeet.html">
@@ -80,14 +81,49 @@
 
 </ons-tabbar> 
 
-   
+ <template id="dialog.html">
+  <ons-dialog id="my-dialog">
+    <div style="text-align: center; padding: 10px;">
+      <p>
+        Stop playing around! Get started with your relaxation already. 
+      </p>
 
+      <p>
+        <ons-button class="about" onclick="hideDialog('my-dialog')">Close</ons-button>
+      </p>
+    </div>
+  </ons-dialog>
+</template> 
+
+    
+    <script>
+        var showTemplateDialog = function() {
+          var dialog = document.getElementById('my-dialog');
+
+          if (dialog) {
+            dialog.show();
+          } else {
+            ons.createElement('dialog.html', { append: true })
+              .then(function(dialog) {
+                dialog.show();
+              });
+          }
+        };
+
+        var hideDialog = function(id) {
+          document
+            .getElementById(id)
+            .hide();
+        };    
+
+    </script>
+    
 <ons-template id="feelFeet.html">
   <ons-page id="feelFeet">
     <ons-toolbar>
       <div class="center">Feel you feet</div>
         <div class="right">
-            <ons-back-button>Menu</ons-back-button></div>
+            <ons-button class="about" onclick="showTemplateDialog() ">~Distraction~</ons-button></div>
     </ons-toolbar>
     <div class="page-content">
 			<ul>
