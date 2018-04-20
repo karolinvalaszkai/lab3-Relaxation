@@ -21,11 +21,22 @@
     
     .page-content {
         padding: 10px;
+        background-color: transparent;
+        font-family: monospace;
     }
     
         .scale {
             width: 100%;
         }
+        
+        ons-tab{
+            background-color: whitesmoke;
+        }
+        .center{
+            background-color: whitesmoke;
+            font-family: monospace;
+        }
+
 	</style>
 
 	<script>
@@ -44,7 +55,7 @@
 
     
 <ons-tabbar>
-        <ons-tab page="about.html" label="About" active>
+        <ons-tab class="center" page="about.html" label="" active>About
         </ons-tab>
     
         <ons-tab label="" page="feelFeet.html">
@@ -93,6 +104,8 @@
       <div class="center">Feel your shoulders</div>
     </ons-toolbar>
     <div class="page-content">
+            <ons-switch>
+            </ons-switch>
       		<ul>
 				<li>Let your arms hang loose.</li>
 				<li>Become aware of the shoulders.</li>
