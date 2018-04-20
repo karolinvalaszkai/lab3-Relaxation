@@ -21,7 +21,7 @@
     
     .page-content {
         padding: 10px;
-        background-color: white;
+        background-color: aliceblue;
         font-family: serif;
     }
     
@@ -30,10 +30,10 @@
         }
         
         ons-tab{
-            background-color: mediumturquoise;
+            background-color: lavender;
         }
         .toolbar{
-            background-color: mediumturquoise;
+            background-color: lavender;
             font-family: monospace;
         }
         .background{
@@ -44,8 +44,9 @@
         }
         
         .about{
-            background-color: antiquewhite
+            background-color: antiquewhite;
 
+        }
 	</style>
 
 	<script>
@@ -64,7 +65,7 @@
 
     
 <ons-tabbar>
-        <ons-tab class="about" page="about.html" label="" active>About
+        <ons-tab class="center" page="about.html" label="" active>About
         </ons-tab>
     
         <ons-tab label="" page="feelFeet.html">
@@ -84,8 +85,9 @@
 <ons-template id="feelFeet.html">
   <ons-page id="feelFeet">
     <ons-toolbar>
-
       <div class="center">Feel you feet</div>
+        <div class="right">
+            <ons-back-button>Menu</ons-back-button></div>
     </ons-toolbar>
     <div class="page-content">
 			<ul>
