@@ -33,7 +33,7 @@
             background-color: lavender;
         }
         .toolbar{
-            background-color: lavender;
+            background-color: slategrey;
             font-family: monospace;
         }
         .background{
@@ -61,30 +61,6 @@
     
 <ons-navigator class="appNavigator" swipeable id="myNavigator"page="home.html"></ons-navigator>
     
-<!-- The navigator object holds pages -->
-
-
-<!-- This is the first page, naming convention is to use ."html" for page templates (they can also be placed in separate files, so this makes kind of sense). -->
-
-
-
-<!--
-<ons-tabbar>
-        <ons-tab class="about" page="about.html" label="" active>About
-        </ons-tab>
-
-        <ons-tab label="" page="feelFeet.html">
-             <img class="list-item--material__thumbnail" src="http://simpleicon.com/wp-content/uploads/foot.png">
-        </ons-tab>
-        <ons-tab label="" page="feelShoulders.html">
-            <img class="list-item--material__thumbnail" src="https://www.mercyhealth.com/assets/images/icons/shoulder_icon.png">
-        </ons-tab>
-        <ons-tab label="" page="feelFace.html">
-            <img class="list-item--material__thumbnail" src=" https://cdn2.iconfinder.com/data/icons/8-emoticons/16/happy-512.png">
-        </ons-tab>
-
-</ons-tabbar>
--->
 
 
 
@@ -222,6 +198,9 @@
 </template>
 -->
     
+    
+  
+
 <ons-splitter>
   <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
     <ons-page>
@@ -256,21 +235,23 @@
             <ons-button class="about" onclick="showTemplateDialog() ">~Distraction~</ons-button>
         </div>
     </ons-toolbar>
-        <ons-list>
-      <ons-list-item onclick="showPage('feelFeet.html')" modifier="chevron" tappable>
+      
+    <ons-card onclick="showPage('feelFeet.html')">
+      <div class="title">Feel your Feet</div>
+      <div class="content">Relax your feet.</div>
+    </ons-card>
+    <ons-card onclick="showPage('FeelShoulders.html')">
+      <div class="title">Feel your Shoulders</div>
+      <div class="content">Relax your shoulders.</div>
+    </ons-card>
+      <ons-card onclick="showPage('feelFeet.html')">
+      <div class="title">Feel your Face</div>
+      <div class="content">Relax your face.</div>
+    </ons-card>
 
-        Feel Your Feet
-        
-      </ons-list-item>
-      <ons-list-item onclick="showPage('feelShoulders.html')" modifier="chevron" tappable>
-        Feel Your Shoulders
-      </ons-list-item>
-      <ons-list-item onclick="showPage('feelFace.html')" modifier="chevron" tappable>
-        Feel Your Face
-      </ons-list-item>
-    </ons-list>
+      
     <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-      Open the menu!
+      Swipe right to open the menu!
     </p>
   </ons-page>
 </template>
