@@ -18,17 +18,17 @@
 
 	<style>
 /*	@import 'page.css';*/
-    
+
     .page-content {
         padding: 10px;
         background-color: aliceblue;
         font-family: serif;
     }
-    
+
         .scale {
             width: 100%;
         }
-        
+
         ons-tab{
             background-color: lavender;
         }
@@ -40,9 +40,9 @@
             background-color: aqua;
         }
         ul{
-            font-size: 120%;  
+            font-size: 120%;
         }
-        
+
         .about{
             background-color: antiquewhite;
             color: black;
@@ -58,17 +58,21 @@
 </head>
 
 <body>
+    
+<ons-navigator class="appNavigator" swipeable id="myNavigator"page="home.html"></ons-navigator>
+    
 <!-- The navigator object holds pages -->
 
 
 <!-- This is the first page, naming convention is to use ."html" for page templates (they can also be placed in separate files, so this makes kind of sense). -->
 
 
-    
+
+<!--
 <ons-tabbar>
         <ons-tab class="about" page="about.html" label="" active>About
         </ons-tab>
-    
+
         <ons-tab label="" page="feelFeet.html">
              <img class="list-item--material__thumbnail" src="http://simpleicon.com/wp-content/uploads/foot.png">
         </ons-tab>
@@ -79,7 +83,10 @@
             <img class="list-item--material__thumbnail" src=" https://cdn2.iconfinder.com/data/icons/8-emoticons/16/happy-512.png">
         </ons-tab>
 
-</ons-tabbar> 
+</ons-tabbar>
+-->
+
+
 
  <template id="dialog.html">
   <ons-dialog id="my-dialog">
@@ -87,6 +94,7 @@
       <p>
         Stop playing around! Get started with your relaxation already. 
       </p>
+
 
       <p>
         <ons-button class="about" onclick="hideDialog('my-dialog')">Close</ons-button>
@@ -122,10 +130,11 @@
   <ons-page id="feelFeet">
     <ons-toolbar>
       <div class="center">Feel you feet</div>
-        <div class="right">
-            <ons-button class="about" onclick="showTemplateDialog() ">~Distraction~</ons-button></div>
+    <div class="left"><ons-back-button>Menu</ons-back-button></div>
     </ons-toolbar>
     <div class="page-content">
+			<ons-switch>
+			</ons-switch>
 			<ul>
 				<li>Stand on your feet.</li>
 				<li>Experience the contact with the ground.</li>
@@ -138,7 +147,7 @@
 				<li>Head.</li>
 				<li>Feel the connection between the top of the head and the feet.</li>
 			</ul>
-        
+
                 <img class="scale" src="https://www.fixflatfeet.com/wp-content/uploads/2013/03/flat-foot-660a.png" alt="Cute kitten">
     </div>
   </ons-page>
@@ -147,8 +156,8 @@
 <ons-template id="feelShoulders.html">
   <ons-page id="feelShoulders">
     <ons-toolbar>
-
       <div class="center">Feel your shoulders</div>
+    <div class="left"><ons-back-button>Menu</ons-back-button></div>
     </ons-toolbar>
     <div class="page-content">
             <ons-switch>
@@ -172,8 +181,11 @@
     <ons-toolbar>
 
       <div class="center">Feel your face</div>
+    <div class="left"><ons-back-button>Menu</ons-back-button></div>
     </ons-toolbar>
     <div class="page-content">
+			<ons-switch>
+			</ons-switch>
 		  <ul>
 				<li>Become aware of your face.</li>
 				<li>Feel the forehead.</li>
@@ -196,6 +208,7 @@
 </ons-template>
 
 
+<!--
 <template id="about.html">
   <ons-page id="about">
     <ons-toolbar>
@@ -207,6 +220,91 @@
 		</div>
 	</ons-page>
 </template>
+-->
+    
+<ons-splitter>
+  <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+    <ons-page>
+      <ons-list>
+        <ons-list-item onclick="fn.load('home.html')" tappable>
+          Home
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('settings.html')" tappable>
+          Settings
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('about.html')" tappable>
+          About
+        </ons-list-item>
+      </ons-list>
+    </ons-page>
+  </ons-splitter-side>
+  <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+</ons-splitter>
+
+<template id="home.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Home
+      </div>
+        <div class="right">
+            <ons-button class="about" onclick="showTemplateDialog() ">~Distraction~</ons-button>
+        </div>
+    </ons-toolbar>
+        <ons-list>
+      <ons-list-item onclick="showPage('feelFeet.html')" modifier="chevron" tappable>
+
+        Feel Your Feet
+        
+      </ons-list-item>
+      <ons-list-item onclick="showPage('feelShoulders.html')" modifier="chevron" tappable>
+        Feel Your Shoulders
+      </ons-list-item>
+      <ons-list-item onclick="showPage('feelFace.html')" modifier="chevron" tappable>
+        Feel Your Face
+      </ons-list-item>
+    </ons-list>
+    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+      Open the menu!
+    </p>
+  </ons-page>
+</template>
+
+<template id="settings.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        Settings
+      </div>
+    </ons-toolbar>
+  </ons-page>
+</template>
+
+<template id="about.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        About
+      </div>
+    </ons-toolbar>
+  </ons-page>
+</template>
+
 
 <script>
 function showPage(page) {
@@ -215,6 +313,6 @@ function showPage(page) {
   $('.appNavigator')[0].pushPage(page)
 }
 </script>
-<script src="controller.js"></script>
+<script src="controller_task4.js"></script>
 </body>
 </html>
